@@ -1,0 +1,8 @@
+FROM ubuntu:14.04.3
+MAINTAINER Upendra Devisetty <upendra@cyverse.org>
+LABEL Description="samtools-0.1.9 Linux update"
+
+# Install all the updates and download dependencies
+RUN apt-get update && apt-get install -y git samtools 
+
+ENTRYPOINT ["/usr/bin/samtools"]
