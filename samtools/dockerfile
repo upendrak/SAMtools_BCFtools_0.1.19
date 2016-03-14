@@ -6,3 +6,10 @@ LABEL Description="samtools-0.1.9 Linux update"
 RUN apt-get update && apt-get install -y git samtools 
 
 ENTRYPOINT ["/usr/bin/samtools"]
+
+# Build docker
+# sudo docker build -t"=ubuntu/samtools-0.1.19:latest" .
+#
+# cd to sample_files directory and then do test run
+# sudo docker run --rm -v $(pwd):/home/upendra_35/SAMtools_BCFtools_0.1.19/sample_files -w /home/upendra_35/SAMtools_BCFtools_0.1.19/sample_files ubuntu/samtools-0.1.19:latest mpileup -C 0 -F 0.002 -L 250 -M 60 -Q 13 -d 250 -e 20 -f ex1.fa -h 100 -m 1 -o 40 -q 0 -u ex1.bam > samtools_mpileup_output
+

@@ -6,3 +6,10 @@ LABEL Description="samtools-0.1.9 Linux update"
 RUN apt-get update && apt-get install -y git samtools 
 
 ENTRYPOINT ["/usr/bin/bcftools"]
+
+# Build docker
+# sudo docker build -t"=ubuntu/bcftools-0.1.19:latest" .
+#
+# cd to sample_files directory and then do test run
+# sudo docker run --rm -v $(pwd):/home/upendra_35/SAMtools_BCFtools_0.1.19/sample_files -w /home/upendra_35/SAMtools_BCFtools_0.1.19/sample_files ubuntu/bcftools-0.1.19:latest view -1 0 -C 1 -U 0 -X 0.01 -c -d 0 -g -i -1 -p 0.5 -t 0.001 -v -P full samtools_mpileup_output > bcftools_view_output
+
